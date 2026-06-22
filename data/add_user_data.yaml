@@ -1,0 +1,70 @@
+# ============================================
+# 新增用户测试数据
+# ============================================
+
+add_user_cases:
+
+  # ========== 新增成功 ==========
+  - name: "add_user_basic"
+    scenario: "add"
+    description: "新增用户-基础字段"
+    userName: "auto_user_01"
+    loginName: "auto_login_01"
+    password: "123456"
+    phonenumber: "13800138001"
+    deptName: "研发部门"
+    roleName: "普通角色"
+    email: ""
+    sex: "0"
+    assert:
+      deptName: "研发部门"
+
+  - name: "add_user_full"
+    scenario: "add"
+    description: "新增用户-完整字段"
+    userName: "auto_user_02"
+    loginName: "auto_login_02"
+    password: "123456"
+    phonenumber: "13800138002"
+    email: "auto02@test.com"
+    sex: "0"
+    deptName: "研发部门"
+    roleName: "普通角色"
+    remark: "自动化测试创建"
+    assert:
+      email: "auto02@test.com"
+      deptName: "研发部门"
+
+  # ========== 必填校验 ==========
+  - name: "required_userName"
+    scenario: "validate"
+    description: "必填校验-用户名称为空"
+    userName: ""             # ← 留空
+    loginName: "auto_login_v01"
+    password: "123456"
+    phonenumber: "13800138003"
+    deptName: "研发部门"
+    roleName: "普通角色"
+    assert_field: "用户名称"   # 断言该字段标红/显示必填提示
+
+  - name: "required_loginName"
+    scenario: "validate"
+    description: "必填校验-登录账号为空"
+    userName: "auto_user_v02"
+    loginName: ""             # ← 留空
+    password: "123456"
+    phonenumber: "13800138004"
+    deptName: "研发部门"
+    roleName: "普通角色"
+    assert_field: "登录账号"
+
+  - name: "required_password"
+    scenario: "validate"
+    description: "必填校验-登录密码为空"
+    userName: "auto_user_v03"
+    loginName: "auto_login_v03"
+    password: ""              # ← 留空
+    phonenumber: "13800138005"
+    deptName: "研发部门"
+    roleName: "普通角色"
+    assert_field: "登录密码"

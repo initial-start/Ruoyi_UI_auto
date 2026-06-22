@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test Artifacts
+reports/allure-results/
+reports/allure-report/
+screenshots/*.png
+logs/*.log
+*.pyc
+__pycache__/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep directory structure
+!reports/allure-results/.gitkeep
+!screenshots/.gitkeep
+!logs/.gitkeep

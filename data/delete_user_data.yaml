@@ -1,0 +1,24 @@
+# ============================================
+# 删除用户测试数据
+# 流程：新增用户 → 搜索 → 删除 → 搜索断言无结果
+# ============================================
+
+delete_user_cases:
+  - name: "delete_single_user"
+    description: "删除单个用户"
+    loginName: "auto_del_01"
+    userName: "auto_del_01"
+    password: "123456"
+    phonenumber: "13800138011"
+    deptName: "研发部门"
+    roleName: "普通角色"
+
+  - name: "delete_user_with_email"
+    description: "删除含邮箱的用户"
+    loginName: "auto_del_02"
+    userName: "auto_del_02"
+    password: "123456"
+    phonenumber: "13800138012"
+    email: "del02@ruoyi.com"
+    deptName: "研发部门"
+    roleName: "普通角色"

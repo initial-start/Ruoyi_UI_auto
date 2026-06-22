@@ -1,0 +1,37 @@
+# ============================================
+# 修改用户测试数据
+# 流程：新增 → 搜索 → 修改 → 验证
+# ============================================
+
+edit_user_cases:
+  - name: "edit_user_name"
+    description: "修改用户名称"
+    # 新增时的初始值
+    init:
+      userName: "edit_init_01"
+      loginName: "edit_init_01"
+      password: "123456"
+      phonenumber: "13800138101"
+      deptName: "研发部门"
+      roleName: "普通角色"
+    # 修改后的值
+    edit:
+      userName: "edit_modified_01"
+    # 断言
+    assert:
+      userName: "edit_modified_01"
+      loginName: "edit_init_01"          # 登录名不可修改，应保持原值
+
+  - name: "edit_user_name_en"
+    description: "修改用户名称-英文名"
+    init:
+      userName: "edit_init_02"
+      loginName: "edit_init_02"
+      password: "123456"
+      phonenumber: "13800138102"
+      deptName: "研发部门"
+      roleName: "普通角色"
+    edit:
+      userName: "edit_modified_02"
+    assert:
+      userName: "edit_modified_02"

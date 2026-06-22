@@ -1,0 +1,16 @@
+# ——————————————————————————————————————————
+# 生产环境冒烟配置 (TEST_ENV=prod)
+# 仅运行只读冒烟测试，不执行写操作
+# ——————————————————————————————————————————
+base_url: "https://ruoyi.example.com"
+browser:
+  headless: true
+  slow_mo: 0
+  viewport:
+    width: 1920
+    height: 1080
+  locale: "zh-CN"
+timeout: 30000
+credentials:
+  username: "readonly_user"
+  password: "readonly_pass"

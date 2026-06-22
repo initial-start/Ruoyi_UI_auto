@@ -1,0 +1,22 @@
+# ——————————————————————————————————————————
+# 测试环境配置 (TEST_ENV=test, 默认)
+# ——————————————————————————————————————————
+base_url: "http://localhost"
+browser:
+  headless: true
+  slow_mo: 0
+  executable_path: "D:/Google/Chrome/Application/chrome.exe"
+  viewport:
+    width: 1920
+    height: 1080
+  locale: "zh-CN"
+timeout: 30000
+credentials:
+  username: "admin"
+  password: "admin123"
+database:
+  host: "localhost"
+  port: 3306
+  user: "root"
+  password: "123456"
+  database: "ry"

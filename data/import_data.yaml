@@ -1,0 +1,24 @@
+# ============================================
+# 导入导出测试数据
+# ============================================
+
+import_cases:
+  # ========== 正常导入 ==========
+  - name: "import_user_excel"
+    scenario: "import"
+    description: "导入用户Excel文件"
+    file_path: "D:/work_project/test_import用户数据xlsx文件.xlsx"
+    assert_result_contains: "成功"
+
+  # ========== 非法格式校验 ==========
+  - name: "import_invalid_txt"
+    scenario: "validate"
+    description: "导入非法格式-txt文件"
+    file_path: "D:/work_project/test_import用户数据txt文件.txt"
+    assert_result_contains: "请选择后缀为 “xls”或“xlsx”的文件"
+
+  - name: "import_invalid_docx"
+    scenario: "validate"
+    description: "导入非法格式-docx文件"
+    file_path: "D:/work_project/test_import用户数据world文件.docx"
+    assert_result_contains: "请选择后缀为 “xls”或“xlsx”的文件"

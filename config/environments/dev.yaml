@@ -1,0 +1,16 @@
+# ——————————————————————————————————————————
+# 开发环境配置 (TEST_ENV=dev)
+# ——————————————————————————————————————————
+base_url: "http://localhost:8080"
+browser:
+  headless: false
+  slow_mo: 200
+  executable_path: "D:/Google/Chrome/Application/chrome.exe"
+  viewport:
+    width: 1920
+    height: 1080
+  locale: "zh-CN"
+timeout: 60000          # 开发环境放宽超时
+credentials:
+  username: "admin"
+  password: "admin123"

@@ -1,0 +1,48 @@
+# ============================================
+# 登录模块测试数据
+# ============================================
+
+# — 所有登录测试用例（成功 + 失败） —
+login_cases:
+
+  # ========== 成功场景 ==========
+  - name: "login_success"
+    scenario: "success"
+    description: "正确的用户名和密码登录"
+    username: "admin"
+    password: "admin123"
+    # 登录成功后的弹窗断言
+    popup:
+      title: "安全提示"
+      content_contains: "初始密码"
+      action: "confirm"        # confirm | cancel | close
+
+  # ========== 失败场景 ==========
+  - name: "wrong_password"
+    scenario: "failure"
+    description: "密码错误"
+    username: "admin"
+    password: "wrong_password_xxxx"
+    # 登录失败后的错误提示断言
+    assert_error_contains: "密码"
+
+  - name: "empty_username"
+    scenario: "failure"
+    description: "用户名为空"
+    username: ""
+    password: "admin123"
+    # 注：空字段前端无文字提示，只验证未跳转到主页
+
+  - name: "empty_password"
+    scenario: "failure"
+    description: "密码为空"
+    username: "admin"
+    password: ""
+    # 注：空字段前端无文字提示，只验证未跳转到主页
+
+  - name: "user_not_exist"
+    scenario: "failure"
+    description: "用户名不存在"
+    username: "nonexistent_user"
+    password: "admin123"
+    assert_error_contains: "用户"
